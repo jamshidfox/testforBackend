@@ -5,10 +5,9 @@ const route = express.Router();
 
 const db = path.resolve() + '/db/database.txt';
 
-route.get('/all_users', (req, res) => {
-  res.send(db);
-  fs.readFile(db, 'utf8', (err, data) => {
-    res.send(data);
+route.get('/all_users', async (req, res) => {
+  await fs.readFile(db, 'utf8', async (err, data) => {
+    await res.send(data);
   });
 });
 route.post('/newUser', (req, res) => {
