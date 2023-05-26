@@ -6,9 +6,7 @@ const route = express.Router();
 const db = path.resolve() + '/db/database.txt';
 
 route.get('/all_users', async (req, res) => {
-  await fs.readFile(db, 'utf8', async (err, data) => {
-    res.send(data);
-  });
+  res.send('Nice habbit');
 });
 route.post('/newUser', (req, res) => {
   const { name, age } = req.body;
