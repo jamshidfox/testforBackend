@@ -6,6 +6,7 @@ const route = express.Router();
 const db = path.resolve() + '/db/database.txt';
 
 route.get('/all_users', (req, res) => {
+  res.send(db);
   fs.readFile(db, 'utf8', (err, data) => {
     res.send(data);
   });
